@@ -1,0 +1,55 @@
+                                !DICAS!
+
+
+Organização é excencial para ter um bom softeware.
+Precisa ser facil para o desenvolver entender e para o cliente utilizar.
+                                !------!
+
+
+
+
+                            &MATERIA&
+
+
+
+O que é um paradigma da programação?
+R: Classificação de linguagens por suas caracteristicas.
+
+Quais são os Tipos?
+
+1- Declarativo: O programador apenas Declara propriedades do Resultado Desejado, mas não como Calculá-lo.
+EX: LÓGICA- PROLOG  | FUNCIONAL- LISP |    DATA-DRIVE: SQL  |
+2- Imperativo: O Programor instrui a maquína sobre como alterar seu estado.
+
+
+                    POO - Origens
+        Busca representar objetos ou fatos do mundo real, onde atributos(variaveis) representam as suas caracteristicas, e métodos(funções) seu compartamento.
+
+                    UML - Definição 
+        Linguagem de modelagem de desenvolvimento geral, de uso geral, no campo de engenharia de software,cujo objetivo é fornecer uma maneira padrão de visualizar o Projeto de um sistema.
+         Ideia: Usar os diagramas como se fosse um projeto pra ajudar toda a equipe a entender o projeto e tentarem chegar em um resultado parecido com o projeto e a ideia dele.
+         Objetivo:  Oferecer uma maneira de visualizar o projeto de um sistema em um conjunto de diagramas,incluindo elementos como:
+                - Atividades
+                - interface com o Usuario
+                - Componentes individuais do sistema e como eles podem interagir com os outros componentes de software.
+                - Como o sistema funcionará
+                - Como as entidades interagem com os outros(componentes e interfaces).
+
+
+                USO CORRETO:
+                USO INCORRETO: Assumir que os novatos usam UML para projetar projetos. 
+
+
+
+                                            !Dicas no Codigo!
+                    Operador new: o new serve para intanciar a classe.
+                    Quanto tiver parenteses * () * é porque é uma função(tem que usar se for usar function)
+
+                                            Diagramas de Classes
+
+                        Visibilidade: Private, public, protected,package
+                        Estruturais: Relacionamento (Classe A herda tudo da classe B)
+                        interface é usada  apenas para falar o metodo.
+                    
+
+
