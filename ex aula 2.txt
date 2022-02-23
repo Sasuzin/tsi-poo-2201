@@ -42,14 +42,14 @@ EX: LÓGICA- PROLOG  | FUNCIONAL- LISP |    DATA-DRIVE: SQL  |
 
 
                                             !Dicas no Codigo!
-                    Operador new: o new serve para intanciar a classe.
-                    Quanto tiver parenteses * () * é porque é uma função(tem que usar se for usar function)
+                   ! Operador new: o new serve para intanciar a classe.
+                    Quanto tiver parenteses * () * é porque é uma função(tem que usar se for usar function)!
 
                                             Diagramas de Classes
 
                         Visibilidade: Private, public, protected,package
                         Estruturais: Relacionamento (Classe A herda tudo da classe B)
-                        interface é usada  apenas para falar o metodo.
+                        interface é usada  apenas para falar o metodo.  
                     
 
 
