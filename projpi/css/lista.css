@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+
+body {
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #247ba0 50%, white 50%);
+}
+
+
+h2{
+   text-align: center;
+}
+
+.fundo {
+    background-color:rgba(211, 211, 211, 211);
+    border-radius: 8px;
+    
+}
+.table{
+    border-color:black;
+}
+
+tbody{
+    color:black;
+}
