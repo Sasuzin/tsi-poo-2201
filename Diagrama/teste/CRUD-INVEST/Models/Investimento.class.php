@@ -6,7 +6,7 @@ class Investimento extends Model {
     public function __construct()
     {
         parent::__construct();
-        $this->tabela ='Investimento';
+        $this->tabela ='Investimentos';
     }
      function inserir(array $dados):?int 
      {
