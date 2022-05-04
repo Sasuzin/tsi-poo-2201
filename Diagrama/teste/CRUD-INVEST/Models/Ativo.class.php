@@ -1,85 +1,84 @@
 <?php
-require __DIR__ . '/Model.class.php';
+require_once __DIR__ . '/Model.class.php';
 
 class Ativo extends Model {
 
     public function __construct()
     {
         parent::__construct();
-        $this->tabela ='ativo';
+
+        $this->tabela = 'ativos';
     }
-     function inserir(array $dados):?int 
-     {
-        
-            $stmt = $this->prepare("INSERT INTO {$this->tabela}
-                                           (id,nome) 
-                                       VALUES
-                                          (:id,:nome)");
 
-         $stmt->bindParam(':nome', $dados['nome']);
-         $stmt->bindParam(':id', $dados['id']);
+    function inserir(array $dados):?int
+    {
+        $stmt = $this->prepare("INSERT INTO {$this->tabela} 
+                                    (nome) 
+                                VALUES 
+                                    (:nome)");
 
-         if($stmt->execute()){
+        $stmt->bindParam(':nome', $dados['nome']);
 
-      return ($this->lastInsertId());
+        if($stmt->execute()){
 
-   } else{
+            return $this->lastInsertId(); 
 
-            return null;
-}
-     }
-        
-     function atualizar(int $id, array $dados):bool
-     {
-            $stmt = $this->prepare("UPDATE  {$this->tabela} SET
-                           id = :id, 
-                           nome = :nome,
-                   
-                         WHERE
-                           id = :id");
+        }else{
 
-      $stmt->bindParam(':id', $id);
-      $stmt->bindParam(':nome', $dados['nome']);
+            return false;
+        }
+    }
 
+    function atualizar(int $id, array $dados):bool
+    {
+        $stmt = $this->prepare("UPDATE {$this->tabela} SET
+                                    id = :id, 
+                                    nome = :nome 
+                                WHERE 
+                                    id = :id");
 
-         if($stmt->rowCount() > 0){
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':nome', $dados['nome']);
+
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
 
             return true;
 
-         }else{
+        }else{
 
             return false;
-         }
-     }
-    
-     function listar(int $id = null):?array
-     {
-      if($id){
+        }
+    }
 
-         $stmt = $this->prepare("SELECT  (nome) FROM {$this->tabela}");
+    function listar(int $id = null):?array
+    {
+        if($id){
 
-         $stmt->bindParam(':id',$id);
+            $stmt = $this->prepare("SELECT 
+                                        id, nome
+                                    FROM 
+                                        {$this->tabela} 
+                                    WHERE 
+                                        id = :id");
 
-       }else{
+            $stmt->bindParam(':id', $id);
 
-         $stmt = $this->prepare("SELECT  (:nome) FROM {$this->tabela}");
+        }else{
 
-       }
+            $stmt = $this->prepare("SELECT id, nome FROM {$this->tabela}");
+        }
 
-       $stmt->execute();
+        $stmt->execute();
 
-       $lista = [];
+        $lista = [];
 
-       while($registro = $stmt->fetch(PDO::FETCH_ASSOC)){
-         
-         $lista[] = $registro;
+        while($registro = $stmt->fetch(PDO::FETCH_ASSOC)){
 
-       }
-         return $lista;
-         
-         }
-     }
+            $lista[] = $registro;
+        }
 
-$ativo = new Ativo;
-
- echo $ativo->inserir(['nome' => 'PETR4']);
+        return $lista;
+    }
+}
