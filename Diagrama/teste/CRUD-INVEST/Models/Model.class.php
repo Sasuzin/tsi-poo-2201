@@ -19,9 +19,23 @@ abstract class Model extends PDO {
         
         abstract function atualizar(int $id, array $dados):bool;
         
-        abstract function apagar(int $id):bool;
-
-        abstract function listar(int $id = null):?array;    
+        abstract function listar(int $id = null):?array;   
+        
+        function apagar(int $id):bool
+        {
+                    $stmt = $this->prepare("DELETE FROM  {$this->tabela} WHERE id = :id");
+   
+            $stmt->bindParam(':id', $id);
+            
+            if($stmt->execute()){
+   
+               return true;
+    
+             }else{
+   
+                return false;
+             }
+        }
 }
 
 //O abstract é uma classe que não pode ser instanciada, para poder usar tem que herdar pra poder usar. E quando eu tiver uma função abstract ela é obrigada a ter nas outras paginas que herdar.//
