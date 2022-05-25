@@ -110,4 +110,9 @@ class Investimento extends Model {
 
         return $lista;        
     }
+
+    function cliente(int $id_cliente):?array
+    {
+        
+    }
 }
