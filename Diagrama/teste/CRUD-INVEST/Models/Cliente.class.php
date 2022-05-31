@@ -12,10 +12,6 @@ class Cliente extends Model {
 
         $this->tabela = 'clientes';
 
-        parent::__construct();
-
-        $this->tabela = 'clientes';
-
         $this->investimento = new Investimento;
     }
 
@@ -85,5 +81,10 @@ class Cliente extends Model {
         }
 
         return $lista;
+    }
+
+    function carteira(int $id_cliente):array
+    {
+       return $this->investimento->cliente($id_cliente);
     }
 }

@@ -87,17 +87,16 @@ class Investimento extends Model {
         return $lista;
     }
 
-    function carteiraCliente(int $id_cliente):array
+    function cliente(int $id_cliente):?array
     {
-        
         $stmt = $this->prepare("SELECT 
-                                    id, qtd, id_ativo
+                                    id, qtd, id_ativo, id_cliente
                                 FROM 
                                     {$this->tabela} 
                                 WHERE 
                                     id_cliente = :id");
 
-        $stmt->bindParam(':id', $id_cliente);
+        $stmt->bindParam(':id', $id_cliente);  
 
         $stmt->execute();
 
@@ -108,11 +107,6 @@ class Investimento extends Model {
             $lista[] = $registro;
         }
 
-        return $lista;        
-    }
-
-    function cliente(int $id_cliente):?array
-    {
-        
+        return $lista;
     }
 }
